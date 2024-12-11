@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   landing:
     build:
@@ -10,36 +8,38 @@ services:
       - "443:443"
     volumes:
       - ./certificates:/etc/nginx/ssl
-      - ./challenges/crypto/spinmerightround/index.html:/usr/share/nginx/html/spinmerightround.html:ro
     environment:
-      DOMAIN: demo.unbcybersec.com
+      DOMAIN: <your-domain>
       USE_CERTBOT: true
-      CERTBOT_EMAIL: letsencrypt@unbcybersec.com
+      CERTBOT_EMAIL: <your-email>
 
-  web_dictionary:
-    build:
-      context: challenges/web/dictionary
-      dockerfile: Dockerfile
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: changme
+      MYSQL_DATABASE: scoreboard
     ports:
-      - "50023:80"
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - "./api/db:/var/lib/mysql"
 
-  web_cats:
+  api:
     build:
-      context: challenges/web/cats
+      context: api
       dockerfile: Dockerfile
     ports:
-      - "50011:80"
-  
-  web_adminsonly:
-    build:
-      context: challenges/web/adminsonly
-      dockerfile: Dockerfile
-    ports:
-      - "50040:3000"
+      - "127.0.0.1:9000:9000"
+    environment:
+      DB_PASS: <mariadb pass>
+      DOMAIN: <domain for your instance>
+      FLASK_KEY: <secret for flask>
+      JWT_KEY: <secret for signing jwt>
+      FLAG: <current challenge flag>
+      DISABLED: 0 # set to 1 if you wish to disable submissions
 
-  web_calculator:
+  chall:
     build:
-      context: challenges/web/calculator
+      context: challenges/<chall folder>
       dockerfile: Dockerfile
     ports:
-      - "50036:5000"
+      - "1337:1337" #fix as needed

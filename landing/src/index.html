@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,9 +16,9 @@
 <body>
     <div class="container">
         <div class="jumbotron bg-transparent mb-0 radius-0">
-            <h1 class="display-2">UNB Cybersec Dem<span class="vim-caret">o</span></h1>
+            <h1 class="display-2">UNB Cybersec Weekly CTF Challenge<span class="vim-caret">s</span></h1>
             <div class="lead mb-3 text-mono text-danger">The University of New Brunswick's own Cybersecurity Club!</div>
-            <div class="text-darkgrey text-mono my-2">*Weekly meetings are held in-person on Wednesdays in Head Hall from 6:30pm-8:00pm</div>
+            <div class="text-darkgrey text-mono my-2">*Weekly meetings are held in-person on Wednesdays in Head Hall from 7:00pm-8:30pm</div>
             <div class="text-mono">
                 <a href="https://discord.gg/kU6MRNr82J"
                     class="btn btn-danger btn-shadow px-3 my-2 ml-0 text-left">
@@ -30,7 +31,7 @@
             </div>
         </div>
 
-        <!-- Web Section -->
+        <!-- Challenge Section -->
         <section class="mt-5">
             <h3 class="display-3">Web</h3>
             <div class="row">
@@ -38,253 +39,78 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Command Injection</h5>
+                            <h5 class="card-title">Demo Chall Name</h5>
                             <p class="card-text">
-                                Can you find a way to run commands on this web server?
+                                Challenge Description
                                 <hr>
-                                <a target="_blank" href="http://demo.unbcybersec.com:50023">dictionary</a>
+                                <a target="_blank" href="http://cotw.unbcybersec.com:1337">Link to challenge resources</a>
                             </p>
                             <div class="input-group">
-                                <input id="inputCommandInjection" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
+                                <input id="inputC" type="text" class="form-control" placeholder="Enter the flag: UNBCTF{...}">
                                 <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputCommandInjection', 'outputCommandInjection', '6c42ec9b775ca9d32d56e2e6632e5922ccdee08b33c29d53bff0c9f3e1098672')">Check</button>
-                                </div>
-                            </div>
-                            <div id="outputCommandInjection"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Local File Inclusion</h5>
-                            <p class="card-text">
-                                A website is just a bunch of files. See if you can find the <code>flag.txt</code> file!
-                                <hr>
-                                <a target="_blank" href="http://demo.unbcybersec.com:50011">cats</a>
-                            </p>
-                            <div class="input-group">
-                                <input id="inputLFI" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputLFI', 'outputLFI', 'd2e72e6b6d829adcc38a09118686e0cb029b285208682fda0546a973ece34a90')">Check</button>
-                                </div>
-                            </div>
-                            <div id="outputLFI"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">SQL Injection</h5>
-                            <p class="card-text">
-                                Many apps use SQL for their databases... and some apps let us inject our own.
-                                <hr>
-                                <a target="_blank" href="http://demo.unbcybersec.com:50040">adminsonly</a>
-                            </p>
-                            <div class="input-group">
-                                <input id="inputSQLI" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputSQLI', 'outputSQLI', 'ce22c9c2f27ecb276ea8e341624386b3a436568c58422736dfc848d7c80e4863')">Check</button>
-                                </div>
-                            </div>
-                            <div id="outputSQLI"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Remote Code Execution</h5>
-                            <p class="card-text">
-                                Coding is fun, but surely no one can run their own on my server...
-                                <hr>
-                                <a target="_blank" href="http://demo.unbcybersec.com:50036">calculator</a>
-                            </p>
-                            <div class="input-group">
-                                <input id="inputRCE" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputRCE', 'outputRCE', '95538a6faa1bc76237818e53043ee65c638cf1d8f288da2114882ae6f0d61049')">Check</button>
-                                </div>
-                            </div>
-                            <div id="outputRCE"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more cards as needed -->
-            </div>
-        </section>
-
-        <!-- Reversing Section -->
-        <section class="mt-5">
-            <h3 class="display-3">Reversing</h3>
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">JavaMooseOne</h5>
-                            <p class="card-text">
-                                Sometimes the flag is right there...
-                                <hr>
-                                <a target="_blank" href="https://demo.unbcybersec.com/files/JavaMooseOne.class">JavaMooseOne.class</a>
-                            </p>
-                            <div class="input-group">
-                                <input id="inputJavaMoose1" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputJavaMoose1', 'outputJavaMoose1', '5f069cf131e8f5bf037d44881e85916cb611c339571cd045ce83463d8c2fe2ae')">Check</button>
-                                </div>
-                            </div>
-                            <div id="outputJavaMoose1"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">JavaMooseTwo</h5>
-                            <p class="card-text">
-                                Sometimes the password is right there...
-                                <hr>
-                                <a target="_blank" href="https://demo.unbcybersec.com/files/JavaMooseTwo.class">JavaMooseTwo.class</a>
-                            </p>
-                            <div class="input-group">
-                                <input id="inputJavaMoose2" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputJavaMoose2', 'outputJavaMoose2', 'b3a345539affc6137818ce2454fc8d389d94faeded69a85c19a4a3c3219a2f07')">Check</button>
-                                </div>
-                            </div>
-                            <div id="outputJavaMoose2"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">JavaMooseThree</h5>
-                            <p class="card-text">
-                                And sometimes they're both nearby...
-                                <hr>
-                                <a target="_blank" href="https://demo.unbcybersec.com/files/JavaMooseThree.class">JavaMooseThree.class</a>
-                            </p>
-                            <div class="input-group">
-                                <input id="inputJavaMoose3" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputJavaMoose3', 'outputJavaMoose3', '34d97364429d0cded8cc34bc9f0bc6d57bc7fd7f2f70cd521ab317e631c22fbb')">Check</button>
-                                </div>
-                            </div>
-                            <div id="outputJavaMoose3"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Now time for C</h5>
-                            <p class="card-text">
-                                Can you see into C?
-                                <hr>
-                                <a target="_blank" href="https://demo.unbcybersec.com/files/cantyouc">cantyouc</a>
-                            </p>
-                            <div class="input-group">
-                                <input id="inputC" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputC', 'outputC', 'bba478a867740cd2a46fb872d6ba84d91949ee5e41cd632fef7998644c67c2e4')">Check</button>
+                                    <button class="btn btn-danger" onclick="checkAnswer('inputC', 'outputC')">Check</button>
                                 </div>
                             </div>
                             <div id="outputC"></div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Add more cards as needed -->
-            </div>
-        </section>
-
-        <!-- Crypto Section -->
-        <section class="mt-5">
-            <h3 class="display-3">Cryptography</h3>
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-md-4 mb-4">
+		<div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Spin Me Right Round</h5>
-                            <p class="card-text">
-                                Something something Caesar Cipher Salad
-                                <hr>
-                                <a target="_blank" href="https://demo.unbcybersec.com/spinmerightround.html">spinmerightround</a>
+                            <h5 class="card-title">Current Solves</h5>
+                            <p class="card-text" id="current-solves">
                             </p>
-                            <div class="input-group">
-                                <input id="inputSpin" type="text" class="form-control" placeholder="Enter the flag: demo{...}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" onclick="checkAnswer('inputSpin', 'outputSpin', 'a74a99fb9ea0f77e12fe83242d74b77fb4c684590df2c5eec4068a14c2e5628f')">Check</button>
-                                </div>
-                            </div>
-                            <div id="outputSpin"></div>
                         </div>
                     </div>
                 </div>
-
+		<div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Leaderboard (All-time)</h5>
+                            <p class="card-text" id="leaderboard">
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <!-- Add more cards as needed -->
             </div>
         </section>
     </div>
-
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Submit Username to Leaderboard</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/submit-solve/" method="POST" id="usrnm">
+                <div class="form-group">
+                  <label for="username" class="col-form-label">Username:</label>
+                  <input type="text" name="username" class="form-control" id="username">
+                </div>
+              </form>
+	    <div id="submit-output"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="user-submit" form="usrnm">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-5">
-        UNB Cybersecurity Club &copy; 2024
+        UNB Cybersecurity Club &copy; 2024 | Originally Made by Silk <3 https://github.com/iamsilk/ 
     </footer>
 
     <!-- Bootstrap 4.3.1 JS and Popper.js (required for Bootstrap) -->
+    <script src="./assets/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script>
-        function checkAnswer(inputId, outputId, expectedHash) {
-            var userInput = document.getElementById(inputId).value;
-
-            // Convert user input to Uint8Array
-            var encoder = new TextEncoder();
-            var data = encoder.encode(userInput);
-
-            // Check if input is in correct format regex '^demo{[.*]}$'
-            if (userInput.match(/^demo{.*}$/) === null) {
-                showOutput(outputId, 'Remember: all flags are like demo{...}', 'warning');
-                return;
-            }
-
-            // Compute SHA-256 hash
-            crypto.subtle.digest('SHA-256', data).then(function (hashBuffer) {
-                var hashArray = Array.from(new Uint8Array(hashBuffer));
-                var hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-
-                // Compare the computed hash with the expected hash
-                if (hashHex === expectedHash) {
-                    showOutput(outputId, 'Success! You got the flag!', 'success');
-                } else {
-                    showOutput(outputId, 'Incorrect. Maybe next time.', 'danger');
-                }
-            }).catch(function (error) {
-                console.error('Error computing hash:', error);
-            });
-        }
-
-        function showOutput(outputId, message, type) {
-            var outputDiv = document.getElementById(outputId);
-            outputDiv.className = 'alert alert-' + type + ' mt-2 mb-0';
-            outputDiv.role = 'alert';
-            outputDiv.textContent = message;
-        }
-    </script>
 </body>
 
 </html>

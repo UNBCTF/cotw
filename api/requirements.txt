@@ -1,0 +1,3 @@
+flask
+mariadb
+flask_jwt_extended
